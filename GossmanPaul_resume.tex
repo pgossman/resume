@@ -1,0 +1,225 @@
+% !TEX TS-program = pdflatexmk
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[12pt,letterpaper,sans]{moderncv}    % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.80, top=1.0cm, bottom=0.8cm]{geometry}
+\usepackage{textcomp}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Paul}{Gossman}
+%\title{Resumé title}                              % optional, remove / comment the line if not wanted
+\phone[fixed]{(313)~720~1892}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+%\phone[fax]{+3~(456)~789~012}
+\email{contact@paulgossman.com}                         % optional, remove / comment the line if not wanted
+%\homepage{www.johndoe.com}                        % optional, remove / comment the line if not wanted
+%\social[github]{pgossman}                             % optional, remove / comment the line if not wanted
+\social[linkedin]{paul-gossman}                       % optional, remove / comment the line if not wanted
+%\social[twitter]{jdoe}                            % optional, remove / comment the line if not wanted
+%\extrainfo{additional information}                % optional, remove / comment the line if not wanted
+%\photo[64pt][0.4pt]{picture}                      % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\vspace{-4.0mm}
+
+\section{Education}
+\cventry{Expected: December 2020}{BS Computer Science}{University of Michigan}{Ann Arbor, MI}{}{}  % arguments 3 to 6 can be left empty
+%\cventry{May 2016}{AAS Computer Information Systems}{St. Clair County Community College}{Port Huron, MI}{}{}
+
+
+\section{Experience}
+\cventry{September 2019 -- December 2019}{Software Engineer Intern}{Jane Street Capital}{New York, NY}{}{%
+}
+\cventry{May 2019 -- August 2019}{Software Engineer Intern}{Facebook}{New York, NY}{}{%
+    \begin{itemize}%
+    	\item Wrote and deployed a high-performance C++ library for tracking per-user requests on the critical path of a public service, preventing malicious scraping of sensitive data.
+        \item Created library for per-user queuing of database requests to prevent abusive users from crashing hosts. 
+        \item Optimized C++ service which receives hundreds of millions of requests per day, reducing computation by 1\% per request.
+    \end{itemize}
+}
+\cventry{September 2018 -- April 2019}{Teaching Assistant - EECS 281 (Data Structures \& Algorithms)}{University of Michigan}{Ann Arbor, MI}{}{%
+    \begin{itemize}%
+    	\item Independently led weekly discussion sections of over 40 students.
+    	\item Mentored and assisted students in weekly office hours.
+        \item Wrote exam material to accurately gauge student understanding.
+    \end{itemize}
+}
+\cventry{May 2018 -- August 2018}{Production Engineer Intern}{Facebook}{Menlo Park, CA}{}{%
+    \begin{itemize}%
+    	\item Created service for highly-scalable disaster recovery of networks using Python and Apache Thrift. 
+	    \begin{itemize}%
+    		\item Utilized asynchronous programming to significantly increase scalability and speed of recovery.
+	    \end{itemize}
+    	\item Implemented testing service which continuously fails network devices, calls the above disaster recovery service and verifies the devices were recovered successfully.
+    	\item Wrote unit and integration tests which fully covered all code.
+	%\item Published documentation on the usage and management of both services to ensure a smooth transition of ownership at the end of my internship.
+    \end{itemize}
+}
+\cventry{September 2017 -- April 2018}{Research Assistant}{CROMA Lab}{Ann Arbor, MI}{}{%
+   \begin{itemize}%
+   	\item Worked with team to research how to utilize crowdsourcing to augment a robot's AI, enabling it to interact with unfamiliar objects for which it has no training data.
+	\item Created web application for crowdworkers to annotate 3D objects using Meteor JavaScript framework.
+   \end{itemize}
+}
+\cventry{Sept 2016 -- Aug 2017}{Software Developer and Support Specialist}{Eastern Michigan University}{Ypsilanti, MI}{}{%
+    \begin{itemize}%
+    	\item Led the design and development of an app for managing insurance claims, eliminating a slow paper process and increasing productivity. Used Laravel MVC framework, MySQL, TDD, and object-oriented design principles.
+    	%\item Renovated UI of a legacy web app using Bootstrap and jQuery, adding mobile support.
+    \end{itemize}
+}
+
+
+%\section{Projects}
+%\cventry{}{Live demo presented at EMU Undergraduate Symposium}{Automated attendance-taking application system}{}{}{
+%    \begin{itemize}
+%    %\vspace{-4.5mm}
+%    	\item Created a highly-scalable framework to automatically collect student attendance data using smartphones.
+%    %	\item Developed a Java Android app which logs students as present for class when they are within Bluetooth range of the instructor's phone at the start of class.
+%   	 \item Designed Apache Cassandra data model, deployed Cassandra cluster on AWS, and created a REST API using Java Servlets to facilitate data transfer between Android devices and Cassandra.
+%    %	\item Created a Laravel web application which shows several data trends and correlations.
+%    \end{itemize}
+%    \vspace{0.8mm}
+%}
+%\cventry{}{}{Intelligent Image Resizer}{}{}{
+%    \begin{itemize}
+%    \vspace{-4.5mm}
+%    \item Created a C++ application that intelligently resizes images to a user-specified resolution without distorting important objects in the photo.
+%    \item Algorithm analyzes the picture to find the most unimportant seam of pixels and removes them.
+%    \end{itemize}
+%    \vspace{0.8mm}
+%}
+%\cventry{}{MHacks X hackathon, \href{https://devpost.com/software/pool-7wivp4}{https://devpost.com/software/pool-7wivp4}}{Pool: an Android and iOS app to connect with new people}{}{}{
+%    \begin{itemize}
+    %\vspace{-4.5mm}
+%    \item Created a social networking app that connects people nearby based on common interests, e.g. a user posts on Pool that they want to play volleyball and other users nearby are notified.
+%    \item Developed the backend REST API using NodeJS and MongoDB. Used React Native for the mobile app.
+%    \item Learned to work with a team of developers while under a critical time restriction.
+%    \end{itemize}
+%}
+
+\section{Technical Skills}
+    \cvlistitem{C++, Python, OCaml, Linux, testing \& TDD, async programming, TCP/IP, Git \& Mercurial}
+%\cvitem{Fluent}{Java, Git, TDD, Linux, TCP/IP, PHP, MVC design.}
+%\cvitem{Experienced}{C++, SQL, Cassandra, JUnit, Maven, Android.}
+
+%\cventry{May 2015 -- May 2016}{Helpdesk Support}{St. Clair County Community College}{Port Huron, MI}{}{%
+%    \begin{itemize}%
+%    \item Created web application which managed inventory and ordering of printer toner cartridges for entire campus.
+%    \item Resolved over 200 tickets and contributed to multiple large IT projects.
+%    \end{itemize}
+%\subsection{Miscellaneous}
+%\cventry{year--year}{Job title}{Employer}{City}{}{Description}
+
+%\cventry{}{\href{https://github.com/pgossman/Image-Scraper}{https://github.com/pgossman/Image-Scraper}}{Image-scraping script}{}{}{
+%\begin{itemize}
+%\vspace{-4.5mm}
+%    \item Created a Python script that downloads HTML at a given URL, parses img tags, and downloads all images; works with both relative and absolute URLs.
+%\end{itemize}}
+%\cventry{}{}{Network installations}{}{}{
+%\begin{itemize}
+%\vspace{-4.7mm}
+%\item Worked with classmates to install networks at two local businesses and a college classroom;
+%\item Work included running and terminating Cat5e, switch and router installation, and IP configuration.
+%\end{itemize}}
+
+
+%\cvitem{Systems/Tools}{Linux administration, Apache httpd, TCP/IP, iptables, Cassandra/NoSQL, \LaTeX{}.}
+
+%\section{Certifications}
+%\cvlistdoubleitem{SUSE Certified Linux Administrator}{Linux Professional Institute Certification 1}
+%\cvlistitem{SUSE Certified Linux Administrator}
+%\cvlistitem{Linux Professional Institute Certification 1}
+
+%\cvitemwithcomment{Language 3}{Skill level}{Comment}
+
+%\section{Computer Skills}
+%\cvdoubleitem{}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
+%\cvdoubleitem{category 2}{}{category 5}{XXX, YYY, ZZZ}
+%\cvdoubleitem{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
+
+%\section{Interests}
+%\cvitem{hobby 1}{Description}
+%\cvitem{hobby 2}{Description}
+%\cvitem{hobby 3}{Description}
+%
+%\section{Extra 1}
+%\cvlistitem{Item 1}
+%\cvlistitem{Item 2}
+%\cvlistitem{Item 3. This item is particularly long and therefore normally spans over several lines. Did you notice the indentation when the line wraps?}
+%
+%
+%\section{References}
+%\begin{cvcolumns}
+%  \cvcolumn{Category 1}{\begin{itemize}\item Person 1\item Person 2\item Person 3\end{itemize}}
+%  \cvcolumn{Category 2}{Amongst others:\begin{itemize}\item Person 1, and\item Person 2\end{itemize}(more upon request)}
+%  \cvcolumn[0.5]{All the rest \& some more}{\textit{That} person, and \textbf{those} also (all available upon request).}
+%\end{cvcolumns}
+%
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+\clearpage
+%-----       letter       ---------------------------------------------------------
+
+%\recipient{Coinbase}{San Francisco, CA}
+%\date{November 22, 2017}
+%\opening{Dear Hiring Manager,}
+%\closing{Thank you,}
+%\makelettertitle
+
+%I have traded on GDAX for close to one year and have multiple years of experience as a Bitcoin user and miner.
+%I also have a solid CS foundation and strong development experience. Please look over my resume for some additional insights into my skillset.
+
+%\vspace{4.0mm}
+
+%\makeletterclosing
+
+\end{document}
